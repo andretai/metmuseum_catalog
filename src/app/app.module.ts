@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ArtworkService } from './services/artwork.service';
+import { ExtractContentPipe } from './pipes/extract-content.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExtractContentPipe
   ],
   imports: [
     BrowserModule,

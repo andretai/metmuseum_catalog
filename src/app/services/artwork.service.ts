@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,18 +18,18 @@ export class ArtworkService {
     })
   }
 
-  getDepartments(): any {
+  getDepartments(): Observable<object> {
     return this.http.get(`${this.ROOT_URL}/departments`)      
   }
 
-  getArtworks(departmentId: number): any {
+  getArtworks(departmentId: number): Observable<object> {
     let params = new HttpParams()
       .set('metadataDate', '2022-03-01')
       .set('departmentIds', `${departmentId}`);
     return this.http.get(`${this.ROOT_URL}/objects`, { params });
   }
 
-  getArtwork(objectID: number): any {
+  getArtwork(objectID: number): Observable<object> {
     return this.http.get(`${this.ROOT_URL}/objects/${objectID}`)
   }
 

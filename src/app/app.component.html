@@ -2,3 +2,5 @@
 <button (click)="logArts()">log arts</button>
 <button (click)="logArt()">log art</button>
 
+<p>{{ artwork | json | extractContent: 'department' }}</p>
+<img [src]="artwork | json | extractContent: 'primaryImageSmall'" style="width: 100%;" />
