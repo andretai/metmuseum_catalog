@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ art.title }}</h4>
+  <h5><span class="badge bg-primary" style="margin-left: 12px;">ID {{ art.objectID }}</span></h5>
+</div>
+<div class="modal-body click-zoom">
+  <div style="display: flex; margin-bottom: 12px;">
+    <h5 *ngFor="let tag of art.tags" style="margin-right: 6px;"><span class="badge bg-secondary">{{ tag.term }}</span></h5>
+  </div>
+  <label style="width: 100%;">
+    <input type="checkbox">
+    <img class="fade-in-image" [src]="art.primaryImage" style="width: 100%; height: 466px; object-fit: cover;" />
+  </label>
+  <h6 class="img-caption">{{ art.period ? art.period + ',' : null }} {{ art.objectDate }}</h6>
+</div>
+<div class="modal-footer">
+  <p class="footer-item" style="font-weight: bold;">Credits</p>
+  <p class="footer-item" style="text-align: end;">{{ art.creditLine }}</p>
+  <a [href]="art.objectURL" target="_blank">Read More on MetMeuseum.org</a>
+</div>

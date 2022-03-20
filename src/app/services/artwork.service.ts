@@ -72,7 +72,7 @@ export class ArtworkService {
       this.http.get(`${this.ROOT_URL}/search`, { params })
         .pipe(
           concatMap((response: any) => {
-            const observables = response.objectIDs.slice(0, 18).map((objectID: number) => {
+            const observables = response.objectIDs.slice(0, 12).map((objectID: number) => {
               return this.http.get(`${this.ROOT_URL}/objects/${objectID}`)
             })
             return forkJoin(observables)

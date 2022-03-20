@@ -8,13 +8,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ExtractContentPipe } from './pipes/extract-content.pipe';
 import { ArtworkListComponent } from './artwork-list/artwork-list.component';
 import { ArtworkPreviewComponent } from './artwork-preview/artwork-preview.component';
+import { ArtworkDetailComponent } from './artwork-detail/artwork-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExtractContentPipe,
     ArtworkListComponent,
-    ArtworkPreviewComponent
+    ArtworkPreviewComponent,
+    ArtworkDetailComponent
   ],
   imports: [
     BrowserModule,
