@@ -6,11 +6,7 @@
   {{ searchText }}
 </form>
 <div *ngFor="let dept of depts">
-  <div *ngIf="hasArts(dept.displayName)" style="display: flex;">
-    <h5>{{ dept.displayName }}</h5>
-    <div *ngFor="let art of getArtsByDept(dept.displayName).slice(0, 6)">
-      <img [src]="art.primaryImageSmall" style="width: 10rem; height: 10rem; object-fit: cover;" />
-      <p>{{ art.title }}</p>
-    </div>
+  <div *ngIf="hasArts(dept.displayName)">
+    <app-artwork-list [dept]="dept" [arts]="getArtsByDept(dept.displayName)"></app-artwork-list>
   </div>
 </div>
