@@ -1,6 +1,16 @@
-<button (click)="logDepts()">log depts</button>
-<button (click)="logArts()">log arts</button>
-<button (click)="logArt()">log art</button>
-
-<p>{{ artwork | json | extractContent: 'department' }}</p>
-<img [src]="artwork | json | extractContent: 'primaryImageSmall'" style="width: 100%;" />
+<!-- <button (click)="logDepts()">log depts</button>
+<button (click)="logArts()">log arts by depts</button> -->
+<!-- <button (click)="logFixed()">log fixed</button> -->
+<form>
+  <input type="text" [value]="searchText" (input)="onSearch($event)">
+  {{ searchText }}
+</form>
+<div *ngFor="let dept of depts">
+  <div *ngIf="hasArts(dept.displayName)" style="display: flex;">
+    <h5>{{ dept.displayName }}</h5>
+    <div *ngFor="let art of getArtsByDept(dept.displayName).slice(0, 6)">
+      <img [src]="art.primaryImageSmall" style="width: 10rem; height: 10rem; object-fit: cover;" />
+      <p>{{ art.title }}</p>
+    </div>
+  </div>
+</div>

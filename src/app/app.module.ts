@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ArtworkService } from './services/artwork.service';
 import { ExtractContentPipe } from './pipes/extract-content.pipe';
 
 @NgModule({
@@ -19,7 +18,7 @@ import { ExtractContentPipe } from './pipes/extract-content.pipe';
     NgbModule,
     FontAwesomeModule
   ],
-  providers: [ArtworkService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

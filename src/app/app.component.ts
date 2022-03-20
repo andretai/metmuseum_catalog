@@ -8,35 +8,47 @@ import { ArtworkService } from './services/artwork.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
   title = 'frontend_assessment';
 
-  artworks: Array<object> = [];
-  departments: Array<object> = [];
-  artwork: object = {};
+  depts: Array<any> = [];
+  arts: Array<any> = [];
+  searchText: string = "";
 
   constructor(private artworkService: ArtworkService) { }
 
   ngOnInit(): void {
-    this.artworkService.getDepartments().subscribe((obj: any) => {
-      this.departments = obj.departments;
+    this.artworkService.deptsChange.subscribe((depts: Array<any>) => {
+      this.depts = depts
     })
-    this.artworkService.getArtworks(1).subscribe((obj: any) => {
-      this.artworks = obj.objectIDs;
-    })
-    this.artworkService.getArtwork(453).subscribe((obj: any) => {
-      this.artwork = obj;
+    this.artworkService.artsChange.subscribe((arts: Array<any>) => {
+      this.arts = arts;
     })
   }
 
-  logDepts(): void {
-    console.log(this.departments);
+  getDeptName(deptId: number): string {
+    return this.depts.find(dept => dept.departmentId == deptId).displayName;
   }
 
-  logArts(): void {
-    console.log(this.artworks);
+  onSearch(e: any): void {
+    console.log(e.target.value)
+    this.artworkService.searchArts(e.target.value)
   }
 
-  logArt(): void {
-    console.log(this.artwork);
+  hasArts(dept: string): boolean {
+    return this.artworkService.checkHasArts(dept);
   }
+
+  getArtsByDept(dept: string): Array<any> {
+    return this.artworkService.filterArtsByDept(dept);
+  }
+
+  // logDepts(): void {
+  //   console.log(this.depts);
+  // }
+
+  // logArts(): void {
+  //   console.log(this.arts);
+  // }
+
 }
