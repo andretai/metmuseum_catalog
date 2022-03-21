@@ -15,8 +15,9 @@ export class ArtworkSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Triggers Artwork Service to manipulate the displayed results.
   onSearch(e: any): void {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     this.artworkService.searchArts(e.target.value)
   }
 
