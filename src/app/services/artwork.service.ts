@@ -41,7 +41,6 @@ export class ArtworkService {
 
   deptsChange: Subject<Array<any>> = new Subject();
   artsChange: Subject<Array<any>> = new Subject();
-  // fixedArtsChange: Subject<Array<any>> = new Subject();
 
   createSubscriptions(): void {
     this.deptsChange.subscribe((depts: any) => {
@@ -62,13 +61,14 @@ export class ArtworkService {
       });
   }
 
+  // Fetch artworks' objectIDs by their departments, then fetch individual objects before setting them to 'arts'.
   fetchArtsByDept(): void {    
-    for(let i = 0; i < this.depts.length; i++) {    
+    for(let i = 0; i < this.depts.length; i++) { 
       var params = new HttpParams()
         .set('hasImages', `${true}`)
         .set('q', '*')
         .set('departmentId', `${this.depts[i].departmentId}`)
-
+      // Used search to get results with image. Leaner and also better looking interface.
       this.http.get(`${this.ROOT_URL}/search`, { params })
         .pipe(
           concatMap((response: any) => {
@@ -80,12 +80,14 @@ export class ArtworkService {
         )
         .subscribe({
           next: (arts: any) => {
+            // Set a separate array to store all of the results.
             this.setFixedArts([...this.FIXED_ARTS, ...arts]);
+            // Set an array to store results, mutable by user's search, can reference 'fixedArts' when search's reset.
             this.artsChange.next([...this.arts, ...arts]);
           },
           error: err => console.log(err),
           complete: () => {
-            console.log('yay')
+            // console.log('yay')
           }
         })    
     }   
@@ -105,10 +107,12 @@ export class ArtworkService {
     }
   }
 
+  // Not every departments return results, so we have to check and compare.
   checkHasArts(dept: string): boolean {
     return this.arts.filter((art: any) => art.department === dept).length > 0;
   }
 
+  // Divide the artworks by department.
   filterArtsByDept(dept: string): any {
     return this.arts.filter((art: any) => art.department === dept);
   }

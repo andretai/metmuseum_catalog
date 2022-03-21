@@ -2,7 +2,6 @@
   <img class="card-img-top fade-in-image" [src]="art ? art.primaryImageSmall : null" style="width: 100%; height: 16rem; object-fit: cover;" />
   <div class="card-body">
     <p class="card-text artwork-title">{{ art ? art.title : null }}</p>
-    <!-- <button (click)="open(content)">open</button> -->
     <ng-template #content let-modal style="margin-top: 100px;">
       <app-artwork-detail [art]="art"></app-artwork-detail>
     </ng-template>

@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
 
   depts: Array<any> = [];
   arts: Array<any> = [];
-  searchText: string = "";
 
   constructor(private artworkService: ArtworkService) { }
 
@@ -30,11 +29,6 @@ export class AppComponent implements OnInit {
     return this.depts.find(dept => dept.departmentId == deptId).displayName;
   }
 
-  onSearch(e: any): void {
-    // console.log(e.target.value)
-    this.artworkService.searchArts(e.target.value)
-  }
-
   hasArts(dept: string): boolean {
     return this.artworkService.checkHasArts(dept);
   }
@@ -42,13 +36,5 @@ export class AppComponent implements OnInit {
   getArtsByDept(dept: string): Array<any> {
     return this.artworkService.filterArtsByDept(dept);
   }
-
-  // logDepts(): void {
-  //   console.log(this.depts);
-  // }
-
-  // logArts(): void {
-  //   console.log(this.arts);
-  // }
 
 }

@@ -10,13 +10,12 @@ export class ArtworkPreviewComponent implements OnInit {
 
   @Input() art: any;
 
-  closeResult = '';
-
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
 
+  // For triggering the modal with artwork's detail.
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' })
   }
