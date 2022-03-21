@@ -9,6 +9,7 @@ import { ExtractContentPipe } from './pipes/extract-content.pipe';
 import { ArtworkListComponent } from './artwork-list/artwork-list.component';
 import { ArtworkPreviewComponent } from './artwork-preview/artwork-preview.component';
 import { ArtworkDetailComponent } from './artwork-detail/artwork-detail.component';
+import { ArtworkSearchComponent } from './artwork-search/artwork-search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ArtworkDetailComponent } from './artwork-detail/artwork-detail.componen
     ExtractContentPipe,
     ArtworkListComponent,
     ArtworkPreviewComponent,
-    ArtworkDetailComponent
+    ArtworkDetailComponent,
+    ArtworkSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<nav style="display: flex; justify-content: space-between; padding: 48px;">
+  <button type="button" class="btn btn-light">
+    <a href="https://github.com/andretai/frontend_assessment" target="_blank" style="text-decoration: none;">Source Code</a>
+  </button>
+  <div>
+    <div class="input-group">
+      <span class="input-group-text">@</span>
+      <input class="form-control" type="text" placeholder=" Search" [value]="searchText" (input)="onSearch($event)">
+    </div>
+  </div>
+</nav>

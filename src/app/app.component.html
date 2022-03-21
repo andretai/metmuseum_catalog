@@ -1,12 +1,15 @@
 <!-- <button (click)="logDepts()">log depts</button>
 <button (click)="logArts()">log arts by depts</button> -->
 <!-- <button (click)="logFixed()">log fixed</button> -->
-<form>
+<!-- <form>
   <input type="text" [value]="searchText" (input)="onSearch($event)">
   {{ searchText }}
-</form>
-<div *ngFor="let dept of depts">
-  <div *ngIf="hasArts(dept.displayName)">
-    <app-artwork-list [dept]="dept" [arts]="getArtsByDept(dept.displayName)"></app-artwork-list>
+</form> -->
+<app-artwork-search></app-artwork-search>
+<div style="padding: 24px;">
+  <div *ngFor="let dept of depts">
+    <div *ngIf="hasArts(dept.displayName)">
+      <app-artwork-list [dept]="dept" [arts]="getArtsByDept(dept.displayName)"></app-artwork-list>
+    </div>
   </div>
 </div>
