@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   }
 
   onSearch(e: any): void {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     this.artworkService.searchArts(e.target.value)
   }
 
