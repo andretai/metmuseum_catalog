@@ -10,6 +10,7 @@ import { ArtworkListComponent } from './artwork-list/artwork-list.component';
 import { ArtworkPreviewComponent } from './artwork-preview/artwork-preview.component';
 import { ArtworkDetailComponent } from './artwork-detail/artwork-detail.component';
 import { ArtworkSearchComponent } from './artwork-search/artwork-search.component';
+import { ImageLoaderDirective } from './directives/image-loader.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ArtworkSearchComponent } from './artwork-search/artwork-search.componen
     ArtworkListComponent,
     ArtworkPreviewComponent,
     ArtworkDetailComponent,
-    ArtworkSearchComponent
+    ArtworkSearchComponent,
+    ImageLoaderDirective
   ],
   imports: [
     BrowserModule,
