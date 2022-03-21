@@ -8,7 +8,7 @@
   </div>
   <label style="width: 100%;">
     <input type="checkbox">
-    <img class="fade-in-image" [src]="art.primaryImage" style="width: 100%; height: 466px; object-fit: cover;" />
+    <img class="fade-in-image detail-img" [src]="art.primaryImage" appImageLoader />
   </label>
   <h6 class="img-caption">{{ art.period ? art.period + ',' : null }} {{ art.objectDate }}</h6>
 </div>
