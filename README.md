@@ -1,4 +1,4 @@
-# Climedo Health - Frontend Assessment
+# A Simplified Catalog of The Metropolitan Museum of Art Collection
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
@@ -28,9 +28,3 @@ npm install
 ```
 ng serve
 ```
-
-## Application Detail
-
-- Name: Andre Tai Wei Xiang
-- Email: andretai.wx@outlook.com
-- Position: Frontend Engineer
