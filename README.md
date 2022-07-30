@@ -14,7 +14,7 @@ This web application is deployed on Firebase and is accessible via https://metby
 
 1. If you haven't already, clone this repository onto your local machine.
 ```
-git clone https://github.com/andretai/frontend_assessment.git
+git clone https://github.com/andretai/metmuseum_catalog.git
 ```
 3. From your current directory, cd into the cloned repository's directory.
 ```
