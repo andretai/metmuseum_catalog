@@ -8,7 +8,7 @@ Bootstrap, Font Awesome.
 
 ## Live Demo
 
-This web application is deployed on Firebase and is accessible via https://metbyandre.web.app/.
+This web application is deployed on Firebase and is accessible via https://metbyandre.web.app/. Please note that the web application may load slowly the first time.
 
 ## Installation
 
